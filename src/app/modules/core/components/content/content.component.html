@@ -1,0 +1,4 @@
+<p-card class="content-card">
+  <p-progressSpinner *ngIf="isLoading$ | async"></p-progressSpinner>
+  <router-outlet *ngIf="(isLoading$ | async) === false"></router-outlet>
+</p-card>

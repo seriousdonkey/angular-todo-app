@@ -1,0 +1,11 @@
+li {
+  background-color: var(--surface-b);
+}
+
+li span.done {
+  text-decoration: line-through;
+}
+
+li a {
+  cursor: pointer;
+}

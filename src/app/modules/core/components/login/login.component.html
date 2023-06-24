@@ -1,0 +1,32 @@
+<div id="login">
+  <h3 class="mb-4 pb-2 text-center">Login</h3>
+
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+    class="flex flex-column justify-content-center align-items-center"
+  >
+    <p-message
+      *ngIf="errorMessage"
+      severity="error"
+      [text]="errorMessage"
+      class="mb-4"
+    ></p-message>
+
+    <span class="p-float-label mb-4">
+      <input id="email" type="email" pInputText formControlName="email" />
+      <label for="email">Email</label>
+    </span>
+    <span class="p-float-label mb-4">
+      <input
+        id="password"
+        type="password"
+        pInputText
+        formControlName="password"
+      />
+      <label for="password">Password</label>
+    </span>
+
+    <button type="submit" pButton>Login</button>
+  </form>
+</div>

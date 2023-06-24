@@ -1,0 +1,7 @@
+<form [formGroup]="todoCreateForm" (ngSubmit)="onCreateTodo()" class="flex justify-content-center align-items-center mb-2">
+  <span class="p-float-label w-full">
+    <input id="createTodoInput" class="w-full" type="text" pInputText formControlName="todoInput">
+    <label for="createTodoInput">Enter your todo</label>
+  </span>
+  <button [disabled]="!todoCreateForm.valid" class="ml-2" pButton>Add</button>
+</form>

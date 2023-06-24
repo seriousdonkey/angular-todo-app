@@ -1,0 +1,33 @@
+<div class="todo w-20rem sm:w-30rem">
+  <app-todo-create (doCreate)="onCreate($event)"></app-todo-create>
+
+  <ng-template [ngIf]="(todos$ | async)?.length" [ngIfElse]="emptyTodoList">
+    <p-tabView>
+      <p-tabPanel header="All">
+        <app-todo-list
+          [todos$]="todos$"
+          (doUpdate)="onUpdate($event)"
+          (doDelete)="onDelete($event)"
+        ></app-todo-list>
+      </p-tabPanel>
+      <p-tabPanel header="Active">
+        <app-todo-list
+          [todos$]="activeTodos$"
+          (doUpdate)="onUpdate($event)"
+          (doDelete)="onDelete($event)"
+        ></app-todo-list>
+      </p-tabPanel>
+      <p-tabPanel header="Completed">
+        <app-todo-list
+          [todos$]="completedTodos$"
+          (doUpdate)="onUpdate($event)"
+          (doDelete)="onDelete($event)"
+        ></app-todo-list>
+      </p-tabPanel>
+    </p-tabView>
+  </ng-template>
+
+  <ng-template #emptyTodoList>
+    <p class="mt-5 text-center">You don't have created todos yet.</p>
+  </ng-template>
+</div>

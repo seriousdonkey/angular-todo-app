@@ -1,0 +1,8 @@
+<ul class="p-0">
+  <app-todo-item
+    *ngFor="let todo of todos$ | async"
+    [todo]="todo"
+    (todoChecked)="onChecked($event)"
+    (todoDeleted)="onDelete($event)"
+  ></app-todo-item>
+</ul>

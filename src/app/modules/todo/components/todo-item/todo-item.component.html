@@ -1,0 +1,20 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<li
+  class="list-none w-full flex justify-content-between align-items-center border-0 p-2 mb-2 text-base font-medium"
+  [ngClass]="{ 'font-italic': todo?.done }"
+>
+  <div>
+    <p-checkbox
+      class="mx-2"
+      [ngModel]="todo?.done"
+      [binary]="true"
+      (onChange)="onCheck()"
+    ></p-checkbox>
+    <span [ngClass]="{ done: todo?.done }">{{ todo?.todo }}</span>
+  </div>
+
+  <a (click)="onDelete()" class="mx-2">
+    <i class="pi pi-trash"></i>
+  </a>
+</li>

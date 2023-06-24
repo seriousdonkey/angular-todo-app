@@ -1,0 +1,7 @@
+export enum LoginErrorType {
+  INVALID_EMAIL,
+  USER_DISABLED,
+  USER_NOT_FOUND,
+  WRONG_PASSWORD,
+  UNKNOWN,
+}
