@@ -1,0 +1,35 @@
+<div
+  id="signup"
+  class="h-full flex flex-col justify-center align-center items-center"
+>
+  <app-card>
+    <h2 class="mb-4 pb-2 text-center">Sign Up</h2>
+
+    <form
+      [formGroup]="signUpForm"
+      (ngSubmit)="signUp()"
+      class="flex flex-col gap-5 items-center"
+    >
+      <app-input label="Username" formControlName="username"></app-input>
+      <app-input
+        label="Email"
+        inputType="email"
+        formControlName="email"
+      ></app-input>
+      <app-input
+        label="Password"
+        inputType="password"
+        formControlName="password"
+      ></app-input>
+      <app-input
+        label="Repeat Password"
+        inputType="password"
+        formControlName="passwordVerify"
+      ></app-input>
+
+      <app-button type="submit" [disabled]="!signUpForm.valid">
+        Sign Up
+      </app-button>
+    </form>
+  </app-card>
+</div>

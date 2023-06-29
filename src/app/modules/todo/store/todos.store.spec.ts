@@ -1,6 +1,6 @@
 import { TodosStore } from './todos.store';
 import { TodoDataService } from '../services/todo-data.service';
-import { AuthFacade } from '../../core/auth/facade/auth.facade';
+import { AuthFacade } from '../../auth/facade/auth.facade';
 import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { UserModel } from '../../core/models/user.model';

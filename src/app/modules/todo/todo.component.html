@@ -2,29 +2,11 @@
   <app-todo-create (doCreate)="onCreate($event)"></app-todo-create>
 
   <ng-template [ngIf]="(todos$ | async)?.length" [ngIfElse]="emptyTodoList">
-    <p-tabView>
-      <p-tabPanel header="All">
-        <app-todo-list
-          [todos$]="todos$"
-          (doUpdate)="onUpdate($event)"
-          (doDelete)="onDelete($event)"
-        ></app-todo-list>
-      </p-tabPanel>
-      <p-tabPanel header="Active">
-        <app-todo-list
-          [todos$]="activeTodos$"
-          (doUpdate)="onUpdate($event)"
-          (doDelete)="onDelete($event)"
-        ></app-todo-list>
-      </p-tabPanel>
-      <p-tabPanel header="Completed">
-        <app-todo-list
-          [todos$]="completedTodos$"
-          (doUpdate)="onUpdate($event)"
-          (doDelete)="onDelete($event)"
-        ></app-todo-list>
-      </p-tabPanel>
-    </p-tabView>
+    <app-todo-list
+      [todos$]="todos$"
+      (doUpdate)="onUpdate($event)"
+      (doDelete)="onDelete($event)"
+    ></app-todo-list>
   </ng-template>
 
   <ng-template #emptyTodoList>

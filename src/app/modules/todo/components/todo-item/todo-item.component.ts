@@ -2,13 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../models/todo.model';
 
 import { CommonModule } from '@angular/common';
-import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [CommonModule, CheckboxModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss'],
 })
@@ -24,6 +23,7 @@ export class TodoItemComponent {
   checked = true;
 
   onCheck() {
+    console.log('checked');
     if (this.todo) {
       this.todoChecked.emit(this.todo);
     }
