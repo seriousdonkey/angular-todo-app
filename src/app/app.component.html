@@ -1,4 +1,17 @@
-<app-navigation></app-navigation>
-<div class="content flex align-items-center justify-content-center">
+<!-- <app-navigation></app-navigation>
+<div class="content flex items-center justify-center">
   <app-content></app-content>
+</div> -->
+
+<div class="min-h-screen flex flex-col">
+  <app-navigation></app-navigation>
+  <div
+    class="flex flex-row flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800"
+  >
+    <app-sidebar
+      *ngIf="isLoggedIn"
+      class="mt-12 fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r border-t"
+    ></app-sidebar>
+    <app-content class="ml-64 p-6 w-full"></app-content>
+  </div>
 </div>

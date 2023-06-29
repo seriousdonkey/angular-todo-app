@@ -4,19 +4,13 @@ import { Todo } from './models/todo.model';
 import { TodosStore } from './store/todos.store';
 
 import { CommonModule } from '@angular/common';
-import { TabViewModule } from 'primeng/tabview';
 import { TodoCreateComponent } from './components/todo-create/todo-create.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [
-    CommonModule,
-    TabViewModule,
-    TodoCreateComponent,
-    TodoListComponent,
-  ],
+  imports: [CommonModule, TodoCreateComponent, TodoListComponent],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss'],
   providers: [TodosStore],

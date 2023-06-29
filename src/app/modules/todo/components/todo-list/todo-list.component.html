@@ -1,8 +1,8 @@
-<ul class="p-0">
+<ul class="flex flex-col p-4">
   <app-todo-item
     *ngFor="let todo of todos$ | async"
-    [todo]="todo"
     (todoChecked)="onChecked($event)"
     (todoDeleted)="onDelete($event)"
+    [todo]="todo"
   ></app-todo-item>
 </ul>

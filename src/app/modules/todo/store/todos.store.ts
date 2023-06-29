@@ -3,7 +3,7 @@ import { Todo } from '../models/todo.model';
 import { EMPTY, Observable, combineLatest, map, switchMap } from 'rxjs';
 import { TodoDataService } from '../services/todo-data.service';
 import { Injectable } from '@angular/core';
-import { AuthFacade } from '../../core/auth/facade/auth.facade';
+import { AuthFacade } from '../../auth/facade/auth.facade';
 
 export interface TodosState {
   todos: Todo[];

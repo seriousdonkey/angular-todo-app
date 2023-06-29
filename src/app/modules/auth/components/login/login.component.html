@@ -1,0 +1,28 @@
+<div
+  id="login"
+  class="h-full flex flex-col justify-center align-center items-center"
+>
+  <app-card>
+    <h2 class="mb-4 pb-2 text-center">Login</h2>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="login()"
+      class="flex flex-col gap-5 items-center"
+    >
+      <app-input
+        label="Email"
+        inputType="email"
+        formControlName="email"
+      ></app-input>
+
+      <app-input
+        label="Password"
+        inputType="password"
+        formControlName="password"
+      ></app-input>
+
+      <app-button type="submit" [disabled]="!loginForm.valid">Login</app-button>
+    </form>
+  </app-card>
+</div>

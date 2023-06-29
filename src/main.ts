@@ -12,10 +12,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AuthEffects } from './app/modules/core/auth/effects/auth.effects';
-import { LoginEffects } from './app/modules/core/auth/effects/login.effects';
-import { RegisterEffects } from './app/modules/core/auth/effects/register.effects';
-import { LogoutEffects } from './app/modules/core/auth/effects/logout.effects';
+import { AuthEffects } from './app/modules/auth/effects/auth.effects';
+import { LoginEffects } from './app/modules/auth/effects/login.effects';
+import { RegisterEffects } from './app/modules/auth/effects/register.effects';
+import { LogoutEffects } from './app/modules/auth/effects/logout.effects';
 
 if (environment.production) {
   enableProdMode();
