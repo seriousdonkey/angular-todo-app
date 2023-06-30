@@ -10,7 +10,7 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { LoginErrorType } from '../login-error';
-import { STOP_LOADING_ACTION } from '../../ui/store/ui.actions';
+import { STOP_LOADING_ACTION } from '../../store/ui/ui.actions';
 import { Observable, of, throwError } from 'rxjs';
 import { FirebaseError } from 'firebase/app';
 

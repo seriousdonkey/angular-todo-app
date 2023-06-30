@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { UiFacade } from '../../facade/ui.facade';
+import { UiFacade } from '../../../facade/ui.facade';
 import { Observable } from 'rxjs';
-import { SidebarItem, SidebarMenu } from '../../../models/sidebar.model';
+import { SidebarMenu } from '../../../models/sidebar.model';
+import { CategoriesMenuComponent } from '../categories-menu/categories-menu.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CategoriesMenuComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })

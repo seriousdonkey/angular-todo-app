@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContentComponent } from './content.component';
-import { UiFacade } from '../../facade/ui.facade';
+import { UiFacade } from '../../../facade/ui.facade';
 
 describe('ContentComponent', () => {
   let component: ContentComponent;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { UiFacade } from '../../facade/ui.facade';
+import { UiFacade } from '../../../facade/ui.facade';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';

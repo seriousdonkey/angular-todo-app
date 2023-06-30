@@ -16,6 +16,7 @@ import { AuthEffects } from './app/auth/effects/auth.effects';
 import { LoginEffects } from './app/auth/effects/login.effects';
 import { RegisterEffects } from './app/auth/effects/register.effects';
 import { LogoutEffects } from './app/auth/effects/logout.effects';
+import { TodoEffects } from './app/store/todo/todo.effects';
 
 if (environment.production) {
   enableProdMode();
@@ -34,6 +35,7 @@ bootstrapApplication(AppComponent, {
         LoginEffects,
         RegisterEffects,
         LogoutEffects,
+        TodoEffects,
       ])
     ),
   ],

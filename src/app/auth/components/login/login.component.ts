@@ -8,7 +8,7 @@ import {
 
 import { AuthFacade } from '../../facade/auth.facade';
 import { Subscription } from 'rxjs';
-import { UiFacade } from '../../../ui/facade/ui.facade';
+import { UiFacade } from '../../../facade/ui.facade';
 
 import { CommonModule } from '@angular/common';
 

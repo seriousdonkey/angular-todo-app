@@ -4,10 +4,10 @@ import {
   addMenuItemAction,
   startLoading,
   stopLoading,
-} from '../store/ui.actions';
+} from '../store/ui/ui.actions';
 import { Observable } from 'rxjs';
-import { selectIsLoading, selectMenu } from '../store/ui.selector';
-import { SidebarItem, SidebarMenu } from '../../models/sidebar.model';
+import { selectIsLoading, selectMenu } from '../store/ui/ui.selector';
+import { SidebarItem, SidebarMenu } from '../models/sidebar.model';
 
 @Injectable({ providedIn: 'root' })
 export class UiFacade {

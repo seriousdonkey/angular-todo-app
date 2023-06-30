@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FirestoreService } from '../../../services/firestore.service';
-import { Category } from '../models/category.model';
+import { FirestoreService } from './firestore.service';
+import { Category } from '../pages/todo/models/category.model';
 
 @Injectable({ providedIn: 'root' })
 export class CategorieDataService extends FirestoreService<Category> {

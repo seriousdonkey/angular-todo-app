@@ -5,7 +5,7 @@ import { addError, login, loginFailed, loginSuccess } from '../auth.actions';
 import { catchError, from, map, mergeMap, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { LoginErrorType } from '../login-error';
-import { stopLoading } from '../../ui/store/ui.actions';
+import { stopLoading } from '../../store/ui/ui.actions';
 import { FirebaseError } from '@angular/fire/app';
 
 @Injectable()

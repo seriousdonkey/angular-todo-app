@@ -1,15 +1,9 @@
-<div class="overflow-y-auto overflow-x-hidden flex-grow">
-  <ul class="flex flex-col py-4 space-y-1">
-    <app-categories-menu></app-categories-menu>
-  </ul>
-</div>
-
-<!-- <li class="px-5">
+<li class="px-5">
   <div class="flex flex-row items-center h-8">
-    <div class="text-sm font-light tracking-wide text-gray-500">Menu</div>
+    <div class="text-sm font-light tracking-wide text-gray-500">Categories</div>
   </div>
 </li>
-<li>
+<li *ngFor="let category of categories$ | async">
   <a
     routerLink="/todos"
     class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
@@ -30,6 +24,8 @@
         ></path>
       </svg>
     </span>
-    <span class="ml-2 text-sm tracking-wide truncate"> Home </span>
+    <span class="ml-2 text-sm tracking-wide truncate">
+      {{ category.name }}
+    </span>
   </a>
-</li> -->
+</li>
