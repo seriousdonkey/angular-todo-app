@@ -2,12 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { NavigationComponent } from './modules/core/layout/navigation/navigation.component';
-import { ContentComponent } from './modules/core/layout/content/content.component';
+import { NavigationComponent } from './ui/layout/navigation/navigation.component';
+import { ContentComponent } from './ui/layout/content/content.component';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { AuthState } from './modules/auth/auth.reducer';
-import { AuthFacade } from './modules/auth/facade/auth.facade';
+import { AuthState } from './auth/auth.reducer';
+import { AuthFacade } from './auth/facade/auth.facade';
 
 describe('AppComponent', () => {
   let authFacade: AuthFacade;

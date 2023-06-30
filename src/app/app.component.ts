@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './modules/core/layout/navigation/navigation.component';
-import { ContentComponent } from './modules/core/layout/content/content.component';
-import { SidebarComponent } from './modules/core/layout/sidebar/sidebar.component';
-import { AuthFacade } from './modules/auth/facade/auth.facade';
-import { AuthState } from './modules/auth/auth.reducer';
+import { NavigationComponent } from './ui/layout/navigation/navigation.component';
+import { ContentComponent } from './ui/layout/content/content.component';
+import { SidebarComponent } from './ui/layout/sidebar/sidebar.component';
+import { AuthFacade } from './auth/facade/auth.facade';
+import { AuthState } from './auth/auth.reducer';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
