@@ -1,12 +1,17 @@
 import { ComponentStore } from '@ngrx/component-store';
 import { Todo } from '../models/todo.model';
-import { EMPTY, Observable, combineLatest, map, switchMap } from 'rxjs';
+import { EMPTY, Observable, combineLatest, map, switchMap, tap } from 'rxjs';
 import { TodoDataService } from '../services/todo-data.service';
 import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../auth/facade/auth.facade';
+import { CategorieDataService } from '../services/categories-data.service';
+import { Category } from '../models/category.model';
+import { UiFacade } from '../../core/ui/facade/ui.facade';
+import { SidebarItem } from '../../core/models/sidebar.model';
 
 export interface TodosState {
   todos: Todo[];
+  categories: Category[];
 }
 
 @Injectable()
@@ -25,9 +30,11 @@ export class TodosStore extends ComponentStore<TodosState> {
 
   constructor(
     private todoFirestore: TodoDataService,
-    private authFacade: AuthFacade
+    private categorieDataService: CategorieDataService,
+    private authFacade: AuthFacade,
+    private uiFacade: UiFacade
   ) {
-    super({ todos: [] });
+    super({ todos: [], categories: [] });
   }
 
   readonly addTodos = this.updater((state, todos: Todo[]) => ({
@@ -48,6 +55,30 @@ export class TodosStore extends ComponentStore<TodosState> {
         }
       }),
       map((todos) => this.addTodos(todos))
+    );
+  });
+
+  readonly loadCategories = this.effect<void>((trigger$) => {
+    return combineLatest([this.authFacade.user$, trigger$]).pipe(
+      switchMap(([user]) => {
+        if (user) {
+          return this.categorieDataService.collection$((ref) =>
+            ref.where('userId', '==', user.userId)
+          );
+        } else {
+          return EMPTY;
+        }
+      }),
+      map((categories) => {
+        return categories.map((cat) => {
+          const sidebarItem: SidebarItem = {
+            title: cat.name,
+            route: '',
+          };
+          return sidebarItem;
+        });
+      }),
+      tap((sidebarItems) => this.uiFacade.addMenu('Categories', sidebarItems))
     );
   });
 

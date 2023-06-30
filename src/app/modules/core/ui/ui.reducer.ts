@@ -1,12 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
-import { startLoading, stopLoading } from './ui.actions';
+import { addMenuItemAction, startLoading, stopLoading } from './ui.actions';
+import { SidebarMenu } from '../models/sidebar.model';
 
 export interface State {
   isLoading: boolean;
+  menu: SidebarMenu[];
 }
 
 const initialState: State = {
   isLoading: false,
+  menu: [],
 };
 
 export const uiReducer = createReducer(
@@ -24,7 +27,17 @@ export const uiReducer = createReducer(
       ...state,
       isLoading: false,
     })
-  )
+  ),
+  on(addMenuItemAction, (state, { menuItem }): State => {
+    if (state.menu.findIndex((m) => m.title === menuItem.title) > 0) {
+      return state;
+    }
+
+    return {
+      ...state,
+      menu: [...state.menu, menuItem],
+    };
+  })
 );
 
 export const getIsLoading = (state: State) => state.isLoading;

@@ -32,6 +32,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.loadTodos();
+    this.store.loadCategories();
   }
 
   onCreate(todo: string) {
