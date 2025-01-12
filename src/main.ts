@@ -28,7 +28,7 @@ bootstrapApplication(AppComponent, {
       AngularFireModule.initializeApp(environment.firebase),
       AngularFirestoreModule,
       StoreModule.forRoot(reducers),
-      StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+      StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() , connectInZone: true}),
       EffectsModule.forRoot([
         AuthEffects,
         LoginEffects,
