@@ -23,7 +23,6 @@ export class TodoItemComponent {
   checked = true;
 
   onCheck() {
-    console.log('checked');
     if (this.todo) {
       this.todoChecked.emit(this.todo);
     }

@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "todo-angular-firebase:build:production"
+              "buildTarget": "todo-angular-firebase:build:production"
             },
             "development": {
-              "browserTarget": "todo-angular-firebase:build:development"
+              "buildTarget": "todo-angular-firebase:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "todo-angular-firebase:build"
+            "buildTarget": "todo-angular-firebase:build"
           }
         },
         "test": {

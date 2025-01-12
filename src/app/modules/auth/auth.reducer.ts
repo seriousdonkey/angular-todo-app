@@ -30,7 +30,6 @@ export const authReducer = createReducer(
     })
   ),
   on(addError, (state, { message }): State => {
-    console.log('addError:', message);
     return {
       ...state,
       errorMessage: message,
